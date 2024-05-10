@@ -1,0 +1,13 @@
+def dot_win_probability():
+    total_outcomes = 6 * 6  # Total possible outcomes when Yakko and Wakko roll their dice
+
+    dot_wins = 0
+    for yakko_roll in range(1, 7):
+        for wakko_roll in range(1, 7):
+            max_roll = max(yakko_roll, wakko_roll)
+            for dot_roll in range(max_roll + 1, 7):  # Dot needs to roll higher than max of Yakko and Wakko
+                dot_wins += 1
+
+    return dot_wins / total_outcomes
+
+print("Dot's chances of visiting Transylvania:", dot_win_probability())
